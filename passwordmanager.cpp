@@ -6,7 +6,6 @@
 PasswordManager::PasswordManager(QObject *parent): QObject(parent){}
 
 void PasswordManager::addObj(const QString& webSiteName, const QString& webSiteURL, const QString& login, const QString& password){
-
     std::vector<QString> tempVector;
     (webSiteName.isEmpty()) ? tempVector.push_back("Empty") : tempVector.push_back(webSiteName);
     (webSiteURL.isEmpty()) ? tempVector.push_back("Empty") : tempVector.push_back(webSiteURL);
@@ -57,25 +56,6 @@ void PasswordManager::changeObj(int index, FeildType type, const QString& value)
     else{
         return;
     }
-
-    /*
-        switch(type){
-        case WebSiteName:
-            m_data[index]->setWebSiteName(value);
-            break;
-        case WebSiteURL:
-            m_data[index]->setWebSiteURL(value);
-            break;
-        case Login:
-            m_data[index]->setLogin(value);
-            break;
-        case Password:
-            m_data[index]->setPassword(value);
-            break;
-        default:
-            break;
-        }
-     */
 }
 
 const std::vector<std::unique_ptr<PasswordEntry>>& PasswordManager::getDataVector() const{
