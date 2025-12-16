@@ -8,6 +8,7 @@
 #include<QClipboard>
 #include<QGuiApplication>
 #include<QToolTip>
+#include<QRegularExpression>
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent),
                                             ui(new Ui::MainWindow),
                                             passwordManager(new PasswordManager),
@@ -105,7 +106,13 @@ void MainWindow::showData(){
     }
     ui->DisplayField->clear();
     ui->DisplayField->append("Website: " + obj[currentIndex]->getWebSiteName());
-    ui->DisplayField->append("URL: " "<a href=\"" + obj[currentIndex]->getWebSiteURL() + "\">" + obj[currentIndex]->getWebSiteURL() + "</a>");
+
+    QRegularExpression regExp(R"(^(https?:\/\/)[^\s]+$)");
+    (regExp.match(obj[currentIndex]->getWebSiteURL()).hasMatch()) ? ui->DisplayField->append("URL: " "<a href=\""
+                                                                                                + obj[currentIndex]->getWebSiteURL() + "\">"
+                                                                                                + obj[currentIndex]->getWebSiteURL() + "</a>") :
+    ui->DisplayField->append("URL: " + obj[currentIndex]->getWebSiteURL());
+
     ui->DisplayField->append("Login: " + obj[currentIndex]->getLogin());
     ui->DisplayField->append("Password: " + obj[currentIndex]->getPassword());
 
