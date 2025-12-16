@@ -55,18 +55,12 @@
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="UrlField">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
+          <widget class="QLineEdit" name="UrlField">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
              <height>30</height>
             </size>
-           </property>
-           <property name="verticalScrollBarPolicy">
-            <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
            </property>
           </widget>
          </item>
@@ -80,20 +74,17 @@
          <item>
           <widget class="QLabel" name="WebSiteLabel">
            <property name="text">
-            <string>WebSite</string>
+            <string>Website</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="WebSiteField">
+          <widget class="QLineEdit" name="WebSiteField">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
              <height>30</height>
             </size>
-           </property>
-           <property name="verticalScrollBarPolicy">
-            <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
            </property>
           </widget>
          </item>
@@ -112,15 +103,12 @@
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="LoginField">
+          <widget class="QLineEdit" name="LoginField">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
              <height>30</height>
             </size>
-           </property>
-           <property name="verticalScrollBarPolicy">
-            <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
            </property>
           </widget>
          </item>
@@ -145,15 +133,18 @@
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="PasswordField">
+          <widget class="QLineEdit" name="PasswordField">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
              <height>30</height>
             </size>
-           </property>
-           <property name="verticalScrollBarPolicy">
-            <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
            </property>
           </widget>
          </item>
@@ -161,6 +152,12 @@
           <widget class="QPushButton" name="PasswordGenerateButton">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
            </property>
            <property name="text">
             <string>Generate</string>
@@ -201,7 +198,7 @@
           </size>
          </property>
          <property name="text">
-          <string>AddNew</string>
+          <string>Add New</string>
          </property>
          <property name="iconSize">
           <size>

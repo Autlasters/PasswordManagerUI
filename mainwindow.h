@@ -5,6 +5,7 @@
 #include"passwordmanager.h"
 #include"filemanager.h"
 #include<QCloseEvent>
+#include<QClipboard>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,6 +25,7 @@ private:
     Ui::MainWindow *ui;
     PasswordManager *passwordManager = nullptr;
     FileManager *file = nullptr;
+    QClipboard *board = nullptr;
 public slots:
     void callAddObject();
     void callEditObject();

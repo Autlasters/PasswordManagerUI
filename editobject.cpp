@@ -29,14 +29,14 @@ void EditObject::callCancelEdit(){
 
 void EditObject::setRandomPassword(){
     ui->PasswordField->clear();
-    ui->PasswordField->append(PasswordGenerator::generateRandomPassword());
+    ui->PasswordField->setText(PasswordGenerator::generateRandomPassword());
 }
 
 void EditObject::saveChanges(){
-    passwordManager->changeObj(objInt, WebSiteName, ui->WebSiteField->toPlainText());
-    passwordManager->changeObj(objInt, WebSiteURL, ui->UrlField->toPlainText());
-    passwordManager->changeObj(objInt, Login, ui->LoginField->toPlainText());
-    passwordManager->changeObj(objInt, Password, ui->PasswordField->toPlainText());
+    passwordManager->changeObj(objInt, WebSiteName, ui->WebSiteField->text());
+    passwordManager->changeObj(objInt, WebSiteURL, ui->UrlField->text());
+    passwordManager->changeObj(objInt, Login, ui->LoginField->text());
+    passwordManager->changeObj(objInt, Password, ui->PasswordField->text());
     emit passwordManager->objectEdited();
     close();
 }

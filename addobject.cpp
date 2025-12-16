@@ -29,11 +29,11 @@ void AddObject::callCancelAdd(){
 
 void AddObject::setRandomPassword(){
     ui->PasswordField->clear();
-    ui->PasswordField->append(PasswordGenerator::generateRandomPassword());
+    ui->PasswordField->setText(PasswordGenerator::generateRandomPassword());
 }
 
 void AddObject::addNewObject(){
-    passwordManager->addObj(ui->WebSiteField->toPlainText(), ui->UrlField->toPlainText(), ui->LoginField->toPlainText(), ui->PasswordField->toPlainText());
+    passwordManager->addObj(ui->WebSiteField->text(), ui->UrlField->text(), ui->LoginField->text(), ui->PasswordField->text());
     clearAllFilelds();
     close();
 }
