@@ -1,14 +1,26 @@
+/*
+ * filemanager.cpp
+ *
+ * This .cpp file represents the logic of the FileManager class, with data saving/reading, and file path setting
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #include"filemanager.h"
 #include"passwordmanager.h"
 #include<fstream>
 #include<QString>
 #include<sstream>
 
+//The Constructor of the class
 FileManager::FileManager(PasswordManager& obj): m_obj(obj) {}
 
+//Method to set the file path
 void FileManager::setPathToFile(const std::string& path){
     m_pathToFile = path;
 }
+
+//Method to save data to the file
 void FileManager::saveToFile() const{
     std::ofstream fileToSave(m_pathToFile);
     if(fileToSave.is_open()){
@@ -21,6 +33,8 @@ void FileManager::saveToFile() const{
     }
     fileToSave.close();
 }
+
+//Method to read data from the file
 void FileManager::loadFromFile(){
     std::ifstream fileToLoad(m_pathToFile);
     if(!fileToLoad.is_open()){

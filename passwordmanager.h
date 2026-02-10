@@ -1,3 +1,12 @@
+/*
+ * passwordmanager.h
+ *
+ * This header file defines the PasswordManager class responsible for managing password entries
+ * Stores and manages multiple PasswordEntry objects. It provides functionality for adding, removing, searching, editing entries,
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #ifndef PASSWORDMANAGER_H
 #define PASSWORDMANAGER_H
 

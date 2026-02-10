@@ -1,3 +1,11 @@
+/*
+ * addobject.h
+ *
+ * In this header file the AddObject class is declared, it is the additional window for object creation
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #ifndef ADDOBJECT_H
 #define ADDOBJECT_H
 

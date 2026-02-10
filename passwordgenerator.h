@@ -1,3 +1,12 @@
+/*
+ * passwordgenerator.h
+ *
+ * This header file represents the PasswordGenerator class, which is responsible fo the unique
+ * password genereation
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #ifndef PASSWORDGENERATOR_H
 #define PASSWORDGENERATOR_H
 #include<QString>

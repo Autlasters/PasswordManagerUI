@@ -1,3 +1,11 @@
+/*
+ * editobject.h
+ *
+ * In this header file the EditObject class is declared, it is the additional window for object editing
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #ifndef EDITOBJECT_H
 #define EDITOBJECT_H
 

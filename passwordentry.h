@@ -1,3 +1,12 @@
+/*
+ * passwordentry.h
+ *
+ * This header file represents the PasswordEntry class, which saves password
+ * record containing the website name, website URL, login, and password
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #ifndef PASSWORDENTRY_H
 #define PASSWORDENTRY_H
 

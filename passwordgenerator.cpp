@@ -1,8 +1,17 @@
+/*
+ * passwordgenerator.cpp
+ *
+ * In this .cpp file the algorithm of password generation is implemented
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #include"passwordgenerator.h"
 #include<QString>
 #include<vector>
 #include<random>
 
+//Method to generate the random password with 16 symbols
 QString PasswordGenerator::generateRandomPassword(){
     QString m_generatedPassword;
     m_generatedPassword.clear();

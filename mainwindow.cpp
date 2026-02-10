@@ -1,3 +1,11 @@
+/*
+ * mainwindow.cpp
+ *
+ * This .cpp file implements the logic of the MainWindow class, handling user interaction with the interface
+ *
+ * Built with C++ in Qt Creator using MSVC 2022
+ *
+ */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include"passwordmanager.h"
@@ -9,6 +17,8 @@
 #include<QGuiApplication>
 #include<QToolTip>
 #include<QRegularExpression>
+
+//The Constructor of the class
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent),
                                             ui(new Ui::MainWindow),
                                             passwordManager(new PasswordManager),
@@ -55,19 +65,21 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent),
 
     file->setPathToFile("Data.txt");
     file->loadFromFile();
-
 }
 
+//The Destructor of the class
 MainWindow::~MainWindow() {
     delete ui;
 }
 
+//Method to call the AddObject window
 void MainWindow::callAddObject(){
     AddObject *addObj = new AddObject(this, passwordManager);
     addObj->setAttribute(Qt::WA_DeleteOnClose);
     addObj->show();
 }
 
+//Method to call the EditObject window
 void MainWindow::callEditObject(){
     int currentIndex = ui->ObjectBox->currentIndex();
     EditObject *editObj = new EditObject(this, currentIndex, passwordManager);
@@ -75,10 +87,12 @@ void MainWindow::callEditObject(){
     editObj->show();
 }
 
+//Method to close the application
 void MainWindow::callExit(){
     close();
 }
 
+//Method to delete the object
 void MainWindow::callDeleteObject(){
     int currentIndex = ui->ObjectBox->currentIndex();
     passwordManager->removeObj(currentIndex);
@@ -89,6 +103,7 @@ void MainWindow::callDeleteObject(){
     emit passwordManager->updateList(listOfNames);
 }
 
+//Method to handle the buttons availability
 void MainWindow::checkList(){
     int currentIndex = ui->ObjectBox->currentIndex();
     ui->DeleteButton->setEnabled(currentIndex>=0);
@@ -97,6 +112,7 @@ void MainWindow::checkList(){
     ui->CopyPasswordButton->setEnabled(currentIndex>=0);
 }
 
+//Method to display the data of the an object
 void MainWindow::showData(){
     int currentIndex = ui->ObjectBox->currentIndex();
     auto& obj = passwordManager->getDataVector();
@@ -115,9 +131,9 @@ void MainWindow::showData(){
 
     ui->DisplayField->append("Login: " + obj[currentIndex]->getLogin());
     ui->DisplayField->append("Password: " + obj[currentIndex]->getPassword());
-
 }
 
+//Method to save the data, if the application is unexpectedly closed
 void MainWindow::closeEvent(QCloseEvent *event){
     file->saveToFile();
     event->accept();
